@@ -1,7 +1,7 @@
 
 # Nonlinear Restricted Boltzmann Machine (NRBM) for Quantum Many-Body Systems
 
-This program designed to create and train a Restricted Boltzmann Machine (RBM) with nonlinear energy function on the Heisenberg model within the framework of the NetKet package (Vicentini et al. , SciPost Phys. Codebases 7 (2022), https://scipost.org/10.21468/SciPostPhysCodeb.7) and JAX and Flax Libraries.
+This program designed to create and train a Restricted Boltzmann Machine (RBM) with nonlinear energy function on the Heisenberg model within the framework of the **NetKet** package (Vicentini et al. , SciPost Phys. Codebases 7 (2022), https://scipost.org/10.21468/SciPostPhysCodeb.7) and JAX and Flax Libraries.
 
 ## Key Components
 
