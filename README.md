@@ -39,6 +39,8 @@ For example:
 
 ## Key Components
 
+#### This repo contains the following files:
+
 1. **nrbm.py**: This file contains the class of the Restricted Boltzmann Machine (RBM) with nonlinear energy function (power series).
 2. **che_rbm.py**: This file contains the class  of the Restricted Boltzmann Machine (RBM) with nonlinear energy function as a Chebyshev expansion.
 3. **heisenberg_general.py**: This file contains the class of the Heisenberg model for a general spin degree of freedom $S$ with multiplicity $2S+1$.
