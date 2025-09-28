@@ -3,6 +3,40 @@
 
 This program designed to create and train a Restricted Boltzmann Machine (RBM) with nonlinear energy function on the Heisenberg model within the framework of the **NetKet** package (Vicentini et al. , SciPost Phys. Codebases 7 (2022), https://scipost.org/10.21468/SciPostPhysCodeb.7) and JAX and Flax Libraries.
 
+# Nonlinear Restricted Boltzmann Machine (nRBM)
+
+This repository implements a **Restricted Boltzmann Machine (RBM) with a nonlinear energy function**, following the work of  
+M. Y. Pei and S. R. Clark, *Entropy* **23** (2021).  
+[DOI: 10.3390/e23070879](https://doi.org/10.3390/e23070879)
+
+---
+
+## Nonlinear RBM formulation
+
+The nonlinear RBM is defined as:
+
+$$
+F_{\text{nRBM}}(\boldsymbol{\sigma})
+= \sum_{\{h_i\}} \exp \Biggl[
+    \sum_{n} \sum_{ij} W^{(n)}_{ij}\,\sigma_i^{n}\, h_j
+    + \sum_{n=1}^{2S} \sum_i a^{(n)}_i\, \sigma_i^{n}
+    + \sum_j h_j b_j
+\Biggr]
+$$
+
+---
+
+## Spin multiplicity
+
+The number of powers $n$ is equal to the **spin multiplicity minus 1**.  
+
+For example:  
+- If $S = \tfrac{3}{2}$, the spin multiplicity is $2S + 1 = 4$,  
+  hence $n$ runs up to 4.
+
+---
+
+
 ## Key Components
 
 1. **nrbm.py**: This file contains the class of the Restricted Boltzmann Machine (RBM) with nonlinear energy function (power series).
