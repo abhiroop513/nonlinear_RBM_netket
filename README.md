@@ -42,7 +42,31 @@ For example:
 1. **nrbm.py**: This file contains the class of the Restricted Boltzmann Machine (RBM) with nonlinear energy function (power series).
 2. **che_rbm.py**: This file contains the class  of the Restricted Boltzmann Machine (RBM) with nonlinear energy function as a Chebyshev expansion.
 3. **heisenberg_general.py**: This file contains the class of the Heisenberg model for a general spin degree of freedom $S$ with multiplicity $2S+1$.
-4. **conserved_spin_flip.py**: This contains a class with effecient jit-compilable functions  within the JAX and Flax framework to implement a sampling technique, which preserves the total z-component of the spin.
+4. **conserved_spin_flip.py**: This contains a class with effecient jit-compilable functions  within the JAX and Flax framework to implement a sampling technique, which preserves the total z-component of the spin.\\
+
+
+---
+### Algorithm:Spin-Conserved Sampling
+
+The sampling procedure works as follows:
+
+i)  **Pick a random spin site** $i$.  <br>
+ii) Propose an update:
+   $`
+   S^z_i \to S^z_i + \delta,
+   \quad \delta \in \{+1, -1\}.
+   `$  <br>
+iii) Check if the update is allowed:  If $S^z_i + \delta$ lies outside the valid range $\{-S, -S+1, \dots, S\}$, reject the move. <br>
+iv) **Simultaneously select another random spin site** $j \neq i$ and propose:
+   $S^z_j \to  S^z_j - \delta.$ <br>
+    Again, this is only valid if $S^z_j - \delta$ stays within the allowed spin range.
+v) If both updates are valid, perform the move.  <br>
+   This ensures that:
+   $\sum_i S^z_i = \text{constant},$
+   i.e. the total magnetization is conserved.
+
+---
+   
 5. **main.py**: This file contains the main code to train and test the RBM on the Heisenberg model.
 6. **plot_evol.py**: This file contains the code to plot the evolution of the energy of the system as a function of the number of epochs(optimization steps).
 
