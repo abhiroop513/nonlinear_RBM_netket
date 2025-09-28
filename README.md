@@ -34,6 +34,30 @@ For example:
 - If $S = \tfrac{3}{2}$, the spin multiplicity is $2S + 1 = 4$,  
   hence $n$ runs up to 4.
 
+## Chebyshev-RBM
+
+Chebyshev polynomials are often better suited for approximating smooth functions than standard power series.  
+It has been shown in a previous work (Ref) that using **Chebyshev expansions** in the Jastrow factor improves convergence.
+
+The Chebyshev-RBM is defined as:
+
+$$
+F_{\text{che-rbm}}(\boldsymbol{\sigma})
+= \sum_{\{h_i\}} \exp \Biggl[
+    \sum_{n} \sum_{ij} W^{(n)}_{ij}\,\sigma_i^{n}\, h_j
+    + \sum_{n} \sum_i a^{(n)}_i\, \sigma_i^{n}
+    + \sum_j h_j b_j
+\Biggr]
+$$
+
+---
+
+### Remarks
+
+- The replacement of the power expansion with **Chebyshev polynomials** improves the **convergence properties** of the ansatz.  
+- Particularly useful when constructing **Jastrow-correlated wavefunctions**.
+
+
 ---
 
 
